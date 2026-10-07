@@ -1,52 +1,51 @@
-package com.example.raihan_3tic.Pertemuan5
+package com.example.Home.pertemuan_6
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.raihan_3tic.R
-import com.example.raihan_3tic.databinding.ActivityLimaBinding
-import com.example.raihan_3tic.databinding.ActivityWebViewBinding
+import com.example.raihan_3tic.databinding.ActivityMain6Binding
 
-class WebViewActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityWebViewBinding
+class MainActivity6 : AppCompatActivity() {
+    private lateinit var binding: ActivityMain6Binding
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+    super.onCreate(savedInstanceState)
 
-        binding = ActivityWebViewBinding.inflate(layoutInflater)
+        binding = ActivityMain6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main6)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.webView.webViewClient = WebViewClient()
-        binding.webView.settings.javaScriptEnabled = true
-        binding.webView.loadUrl("https://pcr.ac.id")
-
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Web PCR"
+            title = "Halaman Pertemuan 5"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
-        // Agar Toolbar hide/show saat scroll web
-        binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
-            if (scrollY > oldScrollY) {
-                binding.appBar.setExpanded(false, true) // sembunyikan
-            } else if (scrollY < oldScrollY) {
-                binding.appBar.setExpanded(true, true) // tampilkan
-            }
-
+        binding.btnFrag1.setOnClickListener {
+            replaceFragment(SatuFragment())
         }
-
+        binding.btnFrag2.setOnClickListener {
+            replaceFragment(DuaFragment())
+        }
+        binding.btnFrag3.setOnClickListener {
+            replaceFragment(TigaFragment())
+        }
+    }
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.containerFragment.id, fragment)
+            .commit()
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -58,4 +57,5 @@ class WebViewActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 }
