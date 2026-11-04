@@ -55,6 +55,15 @@
             android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.example.Home.pertemuan9.NinthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.example.Message.TutorialMessageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Raihan_3TIC"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
