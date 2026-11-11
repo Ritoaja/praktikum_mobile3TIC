@@ -109,6 +109,18 @@
             android:text="Pertemuan 9"
             app:layout_columnWeight="1"
             app:layout_gravity="fill_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/btnPertemuan11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnPertemuan11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pertemuan 11"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal"
             app:layout_constraintBottom_toTopOf="@+id/btnkembali"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
