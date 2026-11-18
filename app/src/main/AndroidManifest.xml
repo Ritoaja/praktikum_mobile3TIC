@@ -68,6 +68,10 @@
             android:exported="false"
             android:theme="@style/Theme.Raihan_3TIC"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.example.Note.NoteFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
