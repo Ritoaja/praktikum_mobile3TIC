@@ -10,6 +10,7 @@ import com.example.Home.HomeFragment
 import com.example.Message.MessageFragment
 import com.example.More.MoreFragment
 import com.example.Note.NoteFragment
+import com.example.catatan.CatatanFragment
 import com.example.raihan_3tic.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -50,6 +51,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.note -> {
                     replaceFragment(NoteFragment())
+                    true
+                }
+                R.id.catatan -> {
+                    replaceFragment(CatatanFragment())
                     true
                 }
 

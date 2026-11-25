@@ -72,6 +72,10 @@
             android:name="com.example.Note.NoteFormActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.example.catatan.CatatanFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
